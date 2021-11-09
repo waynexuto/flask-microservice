@@ -5,8 +5,8 @@ COMMON: &common
   SECRET_KEY: insecure
   LOGGING_CONFIG_PATH: ./config/logging.yaml
   LOGGING_PATH: ./logs
-  SERVICE_ID: 'elevateinterviews'
-  SERVICE_PASSWORD: 'ElevateSecurityInterviews2021'
+  SERVICE_ID: 'changeit'
+  SERVICE_PASSWORD: 'changeit'
   BASE_ENDPOINT: 'https://incident-api.use1stag.elevatesecurity.io/'
   CACHE_TYPE: 'RedisCache'
   CACHE_REDIS_HOST: 'redis'
