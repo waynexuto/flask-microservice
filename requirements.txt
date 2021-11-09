@@ -1,0 +1,12 @@
+fakeredis==1.6.1
+Flask==2.0.2
+Flask_APScheduler==1.12.2
+Flask_Caching==1.10.1
+Flask_Executor==0.10.0
+Flask_HTTPAuth==4.5.0
+Flask_Limiter==1.4
+PyYAML==6.0
+requests==2.26.0
+urllib3==1.26.7
+tzlocal==2.1
+redis==3.5.3
