@@ -11,10 +11,12 @@ Eg.
 - curl --location --request GET 'http://localhost:9000/shutdown' \
 --header 'Authorization: Basic changeit'
 
+
+
 ##Config settings in config.yaml
-ID/Password (change below before run docker build and start server, otherwise REST service won't work)
-- SERVICE_ID: 'changeit'
-- SERVICE_PASSWORD: 'changeit'
+- ID/Password (change below before run docker build and start server, otherwise REST service won't work)
+    * SERVICE_ID: 'changeit'
+    * SERVICE_PASSWORD: 'changeit'
 
 Cache refresh every 60 sec in background task run
 - DEFAULT_CACHE_REFRESH: 60
@@ -28,10 +30,13 @@ Rate limits for APIs
 ThreadPool, max threads
 - EXECUTOR_MAX_WORKERS: 10
 
+
+
+
 ##Build dependencies
+
     Python==3.7
     Docker==20.10.8
-    
     fakeredis==1.6.1
     Flask==2.0.2
     Flask_APScheduler==1.12.2
@@ -46,6 +51,9 @@ ThreadPool, max threads
     tzlocal==2.1
     redis==3.5.3
 
+
+
+
 ##How to run
 - change username password in ./config/config.yaml, otherwise app won't work if not changed
 - build and start rest api service (1st time running, run "up" to build)
@@ -57,6 +65,9 @@ ThreadPool, max threads
     * docker-compose start
 - check if both (redis and web) containers are up
     * docker-compose ps
+
+
+
 
 ##Sample Result
 ```
@@ -140,6 +151,8 @@ ThreadPool, max threads
 ```
 
 
+
+
 ##System design
 - microservice contains mainly 3 parts
     * redis, cache system 
@@ -157,6 +170,9 @@ requires quick response, data pre-processing allows data gets ready before downs
 - heapsort to give correct ordering of JSON output
 - rate limit to protect server from overloading
 - for demo purpose, password is stored as plain for now, in production this will required to hashed as secrete key
+
+
+
 
 ##Production Enhance
 - add NoSQL DB and persist cache data into NoSQL DB periodically, increase reliability and availability, so cache data is immediately available (recover from DB) when server is recovered from a crash, increase server responsiveness
